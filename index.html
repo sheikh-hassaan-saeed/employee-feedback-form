@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Feedback Form</title>
+  <meta name="description" content="A responsive form to collect feedback from employees." />
+  <meta name="author" content="Sheikh Hassaan Saeed" />
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:title" content="Employee Feedback Form" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sheikh-hassaan-saeed.github.io/employee-feedback-form/" />
+  <meta property="og:description" content="A responsive form to collect feedback from employees." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <div class="form-container">
+      <h2>Employee Feedback Form</h2>
+      <form id="feedbackForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="experience">Overall Experience</label>
+        <select id="experience" name="experience" required>
+          <option value="">--Select--</option>
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="fair">Fair</option>
+          <option value="poor">Poor</option>
+        </select>
+
+        <label for="suggestions">Suggestions for Improvement</label>
+        <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
