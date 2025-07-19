@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,34 +15,53 @@
   <meta property="og:description" content="A responsive form to collect feedback from employees." />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
+
 <body>
   <main>
     <div class="form-container">
       <h2>Employee Feedback Form</h2>
       <form id="feedbackForm">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required />
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
+        <div class="input-wrapper">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" onkeyup="validateName()" />
+          <span id="name-error"></span>
+        </div>
 
-        <label for="experience">Overall Experience</label>
-        <select id="experience" name="experience" required>
-          <option value="">--Select--</option>
-          <option value="excellent">Excellent</option>
-          <option value="good">Good</option>
-          <option value="fair">Fair</option>
-          <option value="poor">Poor</option>
-        </select>
+        <div class="input-wrapper">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" onkeyup="validateEmail()" />
+          <span id="email-error"></span>
+        </div>
 
-        <label for="suggestions">Suggestions for Improvement</label>
-        <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+        <div class="input-wrapper">
+          <label for="experience">Overall Experience</label>
+          <select id="experience" name="experience" onchange="validateSelect()">
+            <option value="">--Select--</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+          </select>
+          <span id="select-error"></span>
+        </div>
 
-        <button type="submit">Submit Feedback</button>
+        <div class="input-wrapper">
+          <label for="suggestions">Suggestions for Improvement</label>
+          <textarea id="suggestions" name="suggestions" rows="4" onkeyup="validateMessage()"></textarea>
+          <span id="message-error"></span>
+        </div>
+
+        <div class="input-wrapper">
+        <button type="submit" onclick="return validateForm()">Submit Feedback</button>
+        <span id="submit-error"></span>
+        </div>
       </form>
     </div>
   </main>
   <script src="script.js"></script>
 </body>
+
 </html>
